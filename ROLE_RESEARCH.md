@@ -1,6 +1,8 @@
 # Oracle 345241 — GPU/HPC and AI architecture research
 
-Research date: October 9, 2026. Prepared separately from the portfolio narrative.
+Research initially completed October 9, 2026; NVIDIA nccl-tests and HPC microbenchmark documentation revisited October 10, 2026. Prepared separately from the portfolio narrative.
+
+The resume supplied on October 10 from `oracle_devpatna/codex/_dev_Oracle_PrincipalCoreInfrastructureEngineer_345241.docx` contains the same 15 experience bullets already published, all retained verbatim. Its two named projects remain featured alongside the supplied project list. The existing repository and Pages deployment are reused. The exact job page could not be reopened during this refresh, so the job-specific details below retain their October 9 verification date; current vacancy availability is not confirmed.
 
 ## Verified requisition
 
@@ -27,6 +29,8 @@ NVIDIA’s nccl-tests checks collective-operation correctness and performance, w
 NVIDIA’s HPC benchmark documentation separately presents microbenchmarks for communication and memory operations. A customer-readiness report should relate benchmark results to the workload’s bottlenecks, expected baseline, and tested topology. My inference is that showing a progression from node checks to fabric checks to a realistic workload will communicate more clearly than presenting one efficiency figure without its denominator. [NVIDIA HPC microbenchmarks](https://docs.nvidia.com/nvidia-hpc-benchmarks/Microbenchmarks.html).
 
 ### Serving architecture connects memory and communication
+
+For a reproducible benchmark handoff, record the nccl-tests revision, CUDA/NCCL versions, MPI process placement, ranks, GPU count, message sizes, warm-up, and iteration settings. The current README documents how processes, threads, and GPUs determine total ranks and points to separate interpretation of bus bandwidth. This supports a practical distinction between communication measurements and a customer's end-to-end application result. These handoff recommendations are inferred from the benchmark interface. [NVIDIA nccl-tests configuration](https://github.com/NVIDIA/nccl-tests).
 
 vLLM’s project documentation distinguishes single-GPU, tensor-parallel, and combined tensor/pipeline-parallel deployment strategies according to model fit and available resources. Distributed nodes need consistent execution environments. This provides a useful design framework for the resume’s vLLM work: explain model memory, concurrency, communication overhead, placement, and the actual workload before proposing additional GPUs. The documentation reviewed is on the project’s main branch; version-specific implementation choices need a pinned release for a real deployment. [vLLM parallelism and scaling](https://github.com/vllm-project/vllm/blob/main/docs/serving/parallelism_scaling.md).
 
@@ -60,4 +64,3 @@ The animated GPU/fabric/storage background represents accelerated infrastructure
 - Connect an incident’s corrective actions to customer outcomes and product feedback.
 
 These are preparation suggestions, not confirmed interview questions.
-
